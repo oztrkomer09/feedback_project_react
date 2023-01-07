@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { BsSun, BsMoonStarsFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Header = ({ bgColor, textColor, padding, setReverse, reverse }) => {
   const headerStyles = {
@@ -11,7 +12,9 @@ const Header = ({ bgColor, textColor, padding, setReverse, reverse }) => {
   return (
     <header style={headerStyles}>
       <div className="container">
-        <h2>Feedback UI</h2>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <h2>Feedback UI</h2>
+        </Link>
       </div>
       <div
         style={{

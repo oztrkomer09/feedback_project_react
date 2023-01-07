@@ -1,6 +1,6 @@
 const FeedbackStats = ({ feedbacks }) => {
   var a = 0;
-  const total = feedbacks.map((item) => {
+  feedbacks.map((item) => {
     a += item.rating;
     return a;
   });
