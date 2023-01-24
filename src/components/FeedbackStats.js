@@ -1,4 +1,7 @@
-const FeedbackStats = ({ feedbacks }) => {
+import { useFeedbackData } from "../context/FeedbackContext";
+
+const FeedbackStats = () => {
+  const { feedbacks } = useFeedbackData();
   var a = 0;
   feedbacks.map((item) => {
     a += item.rating;

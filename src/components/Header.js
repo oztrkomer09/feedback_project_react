@@ -1,13 +1,16 @@
 import PropTypes from "prop-types";
 import { BsSun, BsMoonStarsFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useFeedbackData } from "../context/FeedbackContext";
 
-const Header = ({ bgColor, textColor, padding, setReverse, reverse }) => {
+const Header = ({ bgColor, textColor, padding }) => {
   const headerStyles = {
     backgroundColor: bgColor,
     color: textColor,
     padding: padding,
   };
+
+  const { reverse, setReverse } = useFeedbackData();
 
   return (
     <header style={headerStyles}>
