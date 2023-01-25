@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "./Card";
 import Button from "./Button";
 import RatingSelect from "./RatingSelect";
@@ -11,7 +11,15 @@ const FeedbackForm = () => {
   const [message, setMessage] = useState("");
   const [version, setVersion] = useState("primary");
 
-  const { addFeedback } = useFeedbackData();
+  const { addFeedback, feedbackEdit } = useFeedbackData();
+
+  useEffect(() => {
+    if (feedbackEdit.edit === true) {
+      setBtnDisabled(false);
+      setText(feedbackEdit.item.text);
+      setRating(feedbackEdit.item.rating);
+    }
+  }, [feedbackEdit]);
 
   const handleTextChange = (e) => {
     if (text === "") {
@@ -41,9 +49,22 @@ const FeedbackForm = () => {
     }
   };
 
+  const handleUpdate = (e) => {
+    e.preventDefault();
+
+    if (text.trim().length > 10) {
+      const newFeedback = {
+        text: text,
+        rating: rating,
+      };
+      addFeedback(newFeedback);
+      setText("");
+    }
+  };
+
   return (
     <Card>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={feedbackEdit ? handleSubmit : handleUpdate}>
         How would you rate your service with us?
         <RatingSelect
           select={(e) => {

@@ -25,19 +25,6 @@ const FeedbackList = () => {
       </AnimatePresence>
     </div>
   );
-
-  // return (
-  //   <div className="feedback-list">
-  //     {feedbacks.map((item) => (
-  //       <FeedbackItem
-  //         key={item.id}
-  //         item={item}
-  //         reverse={reverse}
-  //         handleDelete={handleDelete}
-  //       />
-  //     ))}
-  //   </div>
-  // );
 };
 
 export default FeedbackList;

@@ -7,6 +7,11 @@ const FeedbackContext = createContext();
 export const FeedbackProvider = ({ children }) => {
   const [reverse, setReverse] = useState(false);
   const [feedbacks, setFeedbacks] = useState(FeedbackData);
+  const [feedbackEdit, setFeedbackEdit] = useState({
+    id: 0,
+    item: {},
+    edit: false,
+  });
 
   const deleteFeedback = (id) => {
     setFeedbacks(feedbacks.filter((feedback) => feedback.id !== id));
@@ -17,6 +22,14 @@ export const FeedbackProvider = ({ children }) => {
     setFeedbacks([newFeedback, ...feedbacks]);
   };
 
+  const editFeedback = (item) => {
+    setFeedbackEdit({
+      id: item.id,
+      item,
+      edit: true,
+    });
+  };
+
   const data = {
     reverse,
     setReverse,
@@ -24,6 +37,8 @@ export const FeedbackProvider = ({ children }) => {
     setFeedbacks,
     deleteFeedback,
     addFeedback,
+    editFeedback,
+    feedbackEdit,
   };
   return (
     <FeedbackContext.Provider value={data}>{children}</FeedbackContext.Provider>
