@@ -11,7 +11,7 @@ const FeedbackForm = () => {
   const [message, setMessage] = useState("");
   const [version, setVersion] = useState("primary");
 
-  const { addFeedback, feedbackEdit } = useFeedbackData();
+  const { addFeedback, feedbackEdit, updateFeedback } = useFeedbackData();
 
   useEffect(() => {
     if (feedbackEdit.edit === true) {
@@ -44,27 +44,18 @@ const FeedbackForm = () => {
         text: text,
         rating: rating,
       };
-      addFeedback(newFeedback);
-      setText("");
-    }
-  };
-
-  const handleUpdate = (e) => {
-    e.preventDefault();
-
-    if (text.trim().length > 10) {
-      const newFeedback = {
-        text: text,
-        rating: rating,
-      };
-      addFeedback(newFeedback);
+      if (feedbackEdit.edit === true) {
+        updateFeedback(feedbackEdit.item.id, newFeedback);
+      } else {
+        addFeedback(newFeedback);
+      }
       setText("");
     }
   };
 
   return (
     <Card>
-      <form onSubmit={feedbackEdit ? handleSubmit : handleUpdate}>
+      <form onSubmit={handleSubmit}>
         How would you rate your service with us?
         <RatingSelect
           select={(e) => {

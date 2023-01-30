@@ -22,6 +22,15 @@ export const FeedbackProvider = ({ children }) => {
     setFeedbacks([newFeedback, ...feedbacks]);
   };
 
+  const updateFeedback = (id, newFeedback) => {
+    setFeedbacks([
+      newFeedback,
+      ...feedbacks.filter((item) => {
+        return item.id !== id;
+      }),
+    ]);
+  };
+
   const editFeedback = (item) => {
     setFeedbackEdit({
       id: item.id,
@@ -39,6 +48,7 @@ export const FeedbackProvider = ({ children }) => {
     addFeedback,
     editFeedback,
     feedbackEdit,
+    updateFeedback,
   };
   return (
     <FeedbackContext.Provider value={data}>{children}</FeedbackContext.Provider>
