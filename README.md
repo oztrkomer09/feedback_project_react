@@ -2,10 +2,21 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+I used json-server as a mock backend so I couldn't deploy it live on vercel. You can clone project and use db.json file as mock backend.
+
 <img
   src="/src/screenshots/feedback_ss_1.png"
   alt="feedback_ss_1"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+You can select a rating, write a text and submit it. You can edit your feedback or delete it. Also you can click to the "Question Mark" icon at the bottom of the page to go to about project page.
+  
+ <img
+  src="/src/screenshots/feedback_ss_2.png"
+  alt="feedback_ss_2"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+  
+About Project Page
 
 ## Available Scripts
 
