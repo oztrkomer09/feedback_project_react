@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-I used json-server as a mock backend so I couldn't deploy it live on vercel. You can clone project and use db.json file as mock backend.
+I used json-server as a mock backend so I couldn't deploy it live on vercel. You must clone project and run the commant "npm run dev" at the terminal to run UI and server concurrently. After that you can use db.json file as your mock backend.
 
 <img
   src="/src/screenshots/feedback_ss_1.png"
@@ -22,13 +22,11 @@ About Project Page
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Open [http://localhost:5000](http://localhost:5000) to view mock backend datas in your browser.
 
 ### `npm test`
 
