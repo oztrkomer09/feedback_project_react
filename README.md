@@ -2,7 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<a href="https://feedback-project-react-chi.vercel.app">Live Demo</a>
+<img
+  src="/src/screenshots/feedback_ss_1.png"
+  alt="feedback_ss_1"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
 
 ## Available Scripts
 
