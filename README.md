@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+I wanted to create a simple feedback system with a mock backend. I used React.JS with contextAPI, react-router-dom in this project.
+
 I used json-server as a mock backend so I couldn't deploy it live on vercel. You must clone project and run the commant "npm run dev" at the terminal to run UI and server concurrently. After that you can use db.json file as your mock backend.
 
 <img
